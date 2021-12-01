@@ -56,3 +56,61 @@ public class HangmanGame {
         guessArray = new char [numOfLetters];
         allGuesses = new char[27];
     }
+    
+    /**
+    * Generates a random word and puts it into a char array
+    * 
+    */
+    public void setup()
+    {
+        chooseWord();
+        createArrays();
+    }
+    
+    /**
+    *   Pick a random word from the possibleWords list that is 
+    *   numOfLetters long.
+    * 
+    */
+    private void chooseWord() {
+        String[] availWords = new String[3];
+        String currWord;
+        for (int i = 0; i < possibleWords.length; i++) {
+            currWord = possibleWords[i];
+            if (currWord.length() == numOfLetters) {
+                if (availWords[0] == null) {
+                    availWords[0] = possibleWords[i];
+                } else if (availWords[1] == null) {
+                    availWords[1] = possibleWords[i];
+                } else {
+                    availWords[2] = possibleWords[i];
+                }
+            }
+        }
+        int index = (int) (Math.random() * (2+1) + 1);
+        word = availWords[index-1];
+        while (word == null) {
+            index = (int) (Math.random() * (2+1) + 1);
+            word = availWords[index-1];
+        }
+        //System.out.println (word);
+    }
+    
+    /**
+    *  Sets up 2 arrays:
+    *   guessArray - fills it full of * characters
+    *   wordArray - fills it with the word that was randomly selected
+    *  
+    */
+    private void createArrays() {
+        for (int i = 0; i < guessArray.length; i++) {
+            guessArray[i] = '*';
+            //System.out.println (guessArray[i]);
+        }
+        for (int i = 0; i < wordArray.length; i++) {
+            wordArray[i] = word.charAt(i);
+            //System.out.println (wordArray[i]);
+        }
+    }
+}
+  
