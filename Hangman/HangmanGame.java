@@ -118,7 +118,6 @@ public class HangmanGame {
     * 
     *   @return - the amount of guesses left for this game
     * 
-    *   (1 mark)
     */
     public int getGuessesLeft() {
         return guessesLeft;
@@ -128,7 +127,6 @@ public class HangmanGame {
     *  Shares how many guesses left
     *  @return - the amount of correct letters the player has left
     * 
-    *  (1 mark)
     */
     public int getCorrectLetters() {
         return numCorrectLetters;
@@ -137,7 +135,6 @@ public class HangmanGame {
     /**
     *   Prints out the "board" with any correct guesses printed out
     *   
-    *   (2 Marks) 
     */
     public void printBoard() {
         for (int i = 0; i < word.length(); i++) {
