@@ -112,5 +112,37 @@ public class HangmanGame {
             //System.out.println (wordArray[i]);
         }
     }
+    
+    /**
+    *   Shares how many guesses left
+    * 
+    *   @return - the amount of guesses left for this game
+    * 
+    *   (1 mark)
+    */
+    public int getGuessesLeft() {
+        return guessesLeft;
+    }
+    
+    /**
+    *  Shares how many guesses left
+    *  @return - the amount of correct letters the player has left
+    * 
+    *  (1 mark)
+    */
+    public int getCorrectLetters() {
+        return numCorrectLetters;
+    }
+    
+    /**
+    *   Prints out the "board" with any correct guesses printed out
+    *   
+    *   (2 Marks) 
+    */
+    public void printBoard() {
+        for (int i = 0; i < word.length(); i++) {
+            System.out.print ("[" + guessArray[i] + "]");
+        }
+    }
 }
   
