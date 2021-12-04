@@ -173,4 +173,39 @@ public class HangmanGame {
         }
         return false;
     }
+    
+    /**
+    *   Checks to see if the guess was a correct guess.
+    *   Updates the guess array, number of correct letters, and guesses left accordingly
+    * 
+    *   @param - user letter guess
+    *   @return - true if the user guessed correctly, false if they guessed incorrectly
+    *   
+    */
+    public boolean checkGuess(char guess) {
+        int preCorrectLetters = numCorrectLetters;
+        String theGuess = Character.toString(guess);
+        for (int i = 0; i < word.length(); i++) {
+            if (wordArray[i] == (guess)) {
+                numCorrectLetters++;
+                guessArray [i] = guess;
+            }
+        }
+        for (int i = 0; i < possibleCharacters.length; i++) {
+            if (possibleCharacters[i] == guess) {
+                possibleCharacters[i] = '0';
+            }
+        }
+        for (int i = 0; i < allGuesses.length; i++) {
+            if (allGuesses[i] != '0') {
+                allGuesses[i] = guess;
+                break;
+            }
+        }
+        if (numCorrectLetters > preCorrectLetters) {
+            return true;
+        }
+        guessesLeft--;
+        return false;
+    }
 }
