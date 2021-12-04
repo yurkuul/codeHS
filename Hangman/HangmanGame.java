@@ -141,5 +141,36 @@ public class HangmanGame {
             System.out.print ("[" + guessArray[i] + "]");
         }
     }
+    
+    /**
+     *  Prints out the answer (FOR TESTING PURPOSES ONLY!)
+     *  
+     */
+    public void printSecretWord() {
+        System.out.println (word);
+    }
+    
+    /**
+    *   Decides if the game is finished or not.
+    * 
+    */
+    public boolean gameOver() {
+        if ((guessesLeft == 0) || (hasWon())) {
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+    *   Decides if the person won or lost the game
+    * 
+    *   @return - true if the user has won, false if they have not won
+    * 
+    */
+    public boolean hasWon() {
+        if (numCorrectLetters == numOfLetters) {
+            return true;
+        }
+        return false;
+    }
 }
-  
