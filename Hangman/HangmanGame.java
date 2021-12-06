@@ -208,4 +208,77 @@ public class HangmanGame {
         guessesLeft--;
         return false;
     }
+    
+    /**
+     * Returns the hangman ASCII art
+     * 
+     * @return - string of the hangman ASCII art
+     * 
+     */
+    public String printHangman () {
+        String theHangman = "";
+        switch (guessesLeft) {
+            case 0: 
+                theHangman = "    ____________\n" + 
+                            "     |/      |\n" + 
+                            "     |      (_)\n" + 
+                            "     |      \\|/\n" + 
+                            "     |       |\n" + 
+                            "     |      / \\\n" + 
+                            "     |\n" + 
+                            "    _|___";
+                break;
+            case 1: 
+                theHangman = "    ____________\n" + 
+                            "     |/      |\n" + 
+                            "     |      (_)\n" +  
+                            "     |      \\|/\n" + 
+                            "     |       |\n" + 
+                            "     |        \\\n" + 
+                            "     |\n" + 
+                            "    _|___";
+                break;
+            case 2:
+                theHangman = "    ____________\n" + 
+                            "     |/      |\n" + 
+                            "     |      (_)\n" +  
+                            "     |      \\|/\n" + 
+                            "     |       |\n" + 
+                            "     |\n" + 
+                            "     |\n" + 
+                            "    _|___";
+                break;
+            case 3:
+                theHangman = "    ____________\n" + 
+                            "     |/      |\n" + 
+                            "     |      (_)\n" +  
+                            "     |      \\|/\n" + 
+                            "     |\n" + 
+                            "     |\n" + 
+                            "     |\n" + 
+                            "    _|___";
+                break;
+            case 4:
+                theHangman = "    ____________\n" + 
+                            "     |/      |\n" + 
+                            "     |      (_)\n" +  
+                            "     |\n" + 
+                            "     |\n" + 
+                            "     |\n" + 
+                            "     |\n" + 
+                            "    _|___";
+                break;
+            case 5:
+                theHangman = "    ____________\n" + 
+                            "     |/\n" + 
+                            "     |\n" + 
+                            "     |\n" + 
+                            "     |\n" + 
+                            "     |\n" + 
+                            "     |\n" + 
+                            "    _|___";
+                break;
+        }
+        return theHangman;
+    }
 }
