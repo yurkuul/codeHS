@@ -281,4 +281,33 @@ public class HangmanGame {
         }
         return theHangman;
     }
+    
+    /**
+     * Checks to see if the letter inputted as been guessed already
+     * 
+     * @return true if the letter has been guessed already, false if the letter hasn't been guessed yet
+     */
+    public boolean checkLetter(char letter) {
+        for (int i = 0; i < possibleCharacters.length; i++) {
+            if (letter == possibleCharacters[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    /**
+     * Returns all the guesses guessed
+     * 
+     * @return String of all the guesses
+     */
+    public String printGuesses() {
+        for (int i = 0; i < allGuesses.length; i++) {
+            if (allGuesses[i] != '0') {
+                allTheGuesses += allGuesses[i] + ", ";
+                break;
+            }
+        }
+        return allTheGuesses;
+    }
 }
