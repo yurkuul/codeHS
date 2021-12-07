@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class PlayHangman
+{
+    public static void main(String[] args)
+    {
+        Scanner s = new Scanner(System.in);
+        //Ask the user to enter a number between 3 and 6
+        System.out.println ("How many letters long would you like the word to be? (Must be between 3 and 6):");
+        int numLetters = s.nextInt();
+        //If their number is not between 3 and 6, please ask them to try again
+        while (numLetters > 6 || numLetters < 3) {
+            System.out.println ("I'm sorry, the number must be between 3 and 6.");
+            System.out.println();
+            System.out.println ("How many letters long would you like the word to be? (Must be between 3 and 6):");
+            numLetters = s.nextInt();
+        }
+    }
+}
