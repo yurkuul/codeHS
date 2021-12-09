@@ -15,5 +15,23 @@ public class PlayHangman
             System.out.println ("How many letters long would you like the word to be? (Must be between 3 and 6):");
             numLetters = s.nextInt();
         }
+        //Buffer
+        s.nextLine();
+        //Once they give the correct amount of numbers, you can create a new game
+        HangmanGame game = new HangmanGame (numLetters);
+        //Once you've created a new game, don't forget to call the "setup" method!
+        //This will set up your word in an array for you, as well as your guess array
+        game.setup();
+        //Print out the current board
+        System.out.println();
+        System.out.println ("Current board:");
+        game.printBoard();
+        System.out.println();
+        System.out.println (game.printHangman());
+        System.out.println();
+        //Ask the users for a guess
+        System.out.println ("What is your guess? You have " + game.getGuessesLeft() + " left.");
+        String letter = s.nextLine();
+        char guess = letter.charAt(0);
     }
 }
