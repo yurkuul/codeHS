@@ -33,5 +33,66 @@ public class PlayHangman
         System.out.println ("What is your guess? You have " + game.getGuessesLeft() + " left.");
         String letter = s.nextLine();
         char guess = letter.charAt(0);
+        while (game.getGuessesLeft() != 0) {
+            //If the guess is correct, print out info saying that they received a correct
+            //guess, as well as how many numbers they have correctly guessed this game 
+            //so far
+            if (game.checkLetter(guess)) {
+                System.out.println ("You have already guessed that letter!");
+                System.out.println();
+                System.out.println ("Your guesses so far: " + game.printGuesses());
+                System.out.println();
+                System.out.println ("What is your guess? You have " + game.getGuessesLeft() + " left.");
+                letter = s.nextLine();
+                guess = letter.charAt(0);
+            } else if (game.checkGuess(guess)) {
+                System.out.println ("Your guess was correct! You have guessed " + game.getCorrectLetters() + " letter(s) correctly.");
+                System.out.println();
+                System.out.println ("Current board:");
+                game.printBoard();
+                System.out.println();
+                System.out.println (game.printHangman());
+                System.out.println();
+                System.out.println ("Guess History: " + game.printGuesses());
+                System.out.println();
+                if (game.hasWon()) {
+                    System.out.println ("Congrats! You have won the game.");
+                    break;
+                } else if (game.gameOver()) {
+                    System.out.println ("You ran out of guesses!");
+                    System.out.println ("The correct answer is: ");
+                    game.printSecretWord();
+                    break;
+                }
+                System.out.println ("What is your guess? You have " + game.getGuessesLeft() + " left.");
+                letter = s.nextLine();
+                guess = letter.charAt(0);
+            } else {
+                //If they're not correct, state that their guess is not correct
+                //Keep asking them for guesses until either they have guessed all the letters 
+                //or run out of guesses
+                System.out.println ("I'm sorry! Your guess was not correct.");
+                System.out.println();
+                System.out.println ("Current board:");
+                game.printBoard();
+                System.out.println();
+                System.out.println (game.printHangman());
+                System.out.println();
+                System.out.println ("Guess History: " + game.printGuesses());
+                System.out.println();
+                if (game.hasWon()) {
+                    System.out.println ("Congrats! You have won the game.");
+                    break;
+                } else if (game.gameOver()) {
+                    System.out.println ("You ran out of guesses!");
+                    System.out.println ("The correct answer is: ");
+                    game.printSecretWord();
+                    break;
+                }
+                System.out.println ("What is your guess? You have " + game.getGuessesLeft() + " left.");
+                letter = s.nextLine();
+                guess = letter.charAt(0);
+            }
+        }
     }
 }
