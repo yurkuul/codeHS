@@ -29,10 +29,27 @@ public class TicTacToe
    
    public void takeTurn(int row, int col) {
        if (turn % 2 == 0) {
-          board[row+1][col+1] = 'X';
+           board[row+1][col+1] = 'X';
        } else {
-          board[row+1][col+1] = 'O';
+           board[row+1][col+1] = 'O';
        }
        turn++;
+   }
+   
+   public boolean checkRow()
+   {
+       String row = "";
+       String player1Win = "XXX";
+       String player2Win = "OOO";
+       for (int r = 0; r < board.length-1; r++) {
+           for (int c = 0; c < board[r].length-1; c++) {
+               row += board[r+1][c+1];
+           }
+           if (row.equals (player1Win) || row.equals (player2Win)) {
+               return true;
+            }
+            row = "";
+       }
+       return false;
    }
 }
