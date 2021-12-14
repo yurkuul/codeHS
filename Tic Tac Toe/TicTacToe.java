@@ -52,4 +52,21 @@ public class TicTacToe
        }
        return false;
    }
+   
+   public boolean checkCol()
+   {
+       String column = "";
+       String player1Win = "XXX";
+       String player2Win = "OOO";
+       for (int c = 0; c < board[0].length-1; c++) {
+           for (int r = 0; r < board.length-1; r++) {
+               column += board[r+1][c+1];
+           }
+           if (column.equals (player1Win) || column.equals (player2Win)) {
+               return true;
+            }
+            column = "";
+       }
+       return false;
+   }
 }
