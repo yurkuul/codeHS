@@ -24,5 +24,14 @@ public class TicTacToeTester
             System.out.println ("Player 1, eneter the column you would like to go");
             column = s.nextInt();
         }
+        if (t.pickLocation(row, column)) {
+            t.takeTurn (row, column);
+        } else {
+            System.out.println ("That spot is already taken!");
+        }
+        System.out.println ();
+        System.out.println ("Current board:");
+        t.printBoard();
+        System.out.println ();
     }
 }
