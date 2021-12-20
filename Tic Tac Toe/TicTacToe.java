@@ -1,19 +1,33 @@
 public class TicTacToe
 {
+   //an integer to keep track of whose turn it is
    private int turn;
+   //2D array to keep track of the board
    private char[][] board = {{' ', '0', '1', '2'},
                             {'0', '-', '-', '-'},
                             {'1', '-', '-', '-'},
                             {'2', '-', '-', '-'}};
-   
+   /**
+   *  Constructor for TicTacToe
+   *
+   */
    public TicTacToe () {
        turn = 0;
    }
    
+   /**
+   *  Returns the value of turn
+   *  
+   *  @return - the value of turn
+   */
    public int getTurn() {
        return turn;
    }
-
+   
+   /**
+   *  Prints out the board for the game based on what has been filled out (if applicable)
+   *
+   */
    public void printBoard() {
        for (int r = 0; r < board.length; r++) {
            for (int c = 0; c < board[r].length; c++) {
@@ -23,6 +37,13 @@ public class TicTacToe
        }
    }
    
+   /**
+   *  Checks to see if the location inputted is a valid space on the board (a location that is empty/unfilled) and returns true if it's free
+   *
+   *  @Param - int row - the row on the board
+   *  @Param - int col - the column on the board
+   *  @return - returns true if the location inputted is an available space, otherwise returns false
+   */
    public boolean pickLocation(int row, int col) {
        return board[row+1][col+1] == '-';
    }
