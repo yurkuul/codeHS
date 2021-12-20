@@ -48,6 +48,12 @@ public class TicTacToe
        return board[row+1][col+1] == '-';
    }
    
+   /**
+   *  Sets the location inputted to the proper value based on whose turn it is. Modulus is used to determine if it's player 1 or player 2's turn based on if the turn is even or odd.
+   *
+   *  @Param - int row - the row on the board
+   *  @Param - int col - the column on the board
+   */
    public void takeTurn(int row, int col) {
        if (turn % 2 == 0) {
            board[row+1][col+1] = 'X';
@@ -56,7 +62,7 @@ public class TicTacToe
        }
        turn++;
    }
-   
+ 
    public boolean checkRow()
    {
        String row = "";
