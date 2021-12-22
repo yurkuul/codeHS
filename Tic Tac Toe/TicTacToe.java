@@ -62,7 +62,12 @@ public class TicTacToe
        }
        turn++;
    }
- 
+   
+   /**
+   *  Checks the board to see if there are 3 consecutive X's or O's in a row
+   *
+   *  @return - returns true if there is a row of XXX or OOO
+   */
    public boolean checkRow()
    {
        String row = "";
@@ -80,6 +85,11 @@ public class TicTacToe
        return false;
    }
    
+   /**
+   *  Checks the board to see if there are 3 consecutive X's or O's in a column
+   *
+   *  @return - returns true if there is a column of XXX or OOO
+   */
    public boolean checkCol()
    {
        String column = "";
