@@ -107,6 +107,11 @@ public class TicTacToe
        return false;
    }
    
+   /**
+   *  Checks the board to see if there are 3 consecutive X's or O's in a diagonal
+   *
+   *  @return - returns true if there is a diagonal of XXX or OOO
+   */
    public boolean checkDiag()
    {
        String diagonal = "";
@@ -117,9 +122,9 @@ public class TicTacToe
         1   X             1   X
         2     X           2 X
         
-        index[0][0], index[1][1], index[2][2] 
+        case 1: index[0][0], index[1][1], index[2][2] 
         or
-        index[0][2], index[1][1], index[2][0]
+        case 2: index[0][2], index[1][1], index[2][0]
         
        */
        //for first case scenario
@@ -145,6 +150,11 @@ public class TicTacToe
        return false;
    }
    
+   /**
+   *  Checks to see if a player has won with 3 XXX's or 3 OOO's in a row, column, or diagona;
+   *
+   *  @return - returns true if a player as won
+   */
    public boolean checkWin()
    {
        if (checkRow() || checkCol() || checkDiag()) {
