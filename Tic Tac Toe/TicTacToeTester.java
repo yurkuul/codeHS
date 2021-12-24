@@ -37,6 +37,8 @@ public class TicTacToeTester
         System.out.println ("Current board:");
         t.printBoard();
         System.out.println ();
+        //Continue asking the players for a location until a player wins
+        //If no one wins and the entire board is filled, then this while loop ends
         while (!t.checkWin() && t.getTurn() < 9) {
             int theTurn = t.getTurn() % 2 + 1;
             System.out.println ("Player " + theTurn + ", eneter the row you would like to go");
@@ -66,6 +68,7 @@ public class TicTacToeTester
                 System.out.println ("Player " + theTurn + " has won!");
             }
         }
+        //If the above while loop ends, then no one has won but the board is filled, so it is a tie
         if (!t.checkWin()) {
             System.out.println ("It is a tie!");
         }
