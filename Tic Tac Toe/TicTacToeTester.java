@@ -4,14 +4,17 @@ public class TicTacToeTester
 {
     public static void main(String[] args)
     {
+        //Setup for TicTacToe game
         TicTacToe t = new TicTacToe();
         Scanner s = new Scanner(System.in);
         System.out.println ("Current board:");
         t.printBoard();
         System.out.println ();
         
+        //Prompt player 1 for what row and column they would like to go
         System.out.println ("Player 1, eneter the row you would like to go");
         int row = s.nextInt();
+        //Checks to see if the space inputted is valid or not based on the grid system
         while (row > 2 || row < 0) {
             System.out.println ("That space is invalid!");
             System.out.println ("Player 1, eneter the row you would like to go");
@@ -24,6 +27,7 @@ public class TicTacToeTester
             System.out.println ("Player 1, eneter the column you would like to go");
             column = s.nextInt();
         }
+        //Checks to see if the space inputted has been taken/filled already, otherwise, fill the location based on whose turn it is
         if (t.pickLocation(row, column)) {
             t.takeTurn (row, column);
         } else {
