@@ -32,6 +32,5 @@ public class RecursiveMin
             numbers.remove(numbers.size()-2);
             return findMinimum(numbers);
         }
-        
     }
 }
