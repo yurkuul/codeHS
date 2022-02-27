@@ -1,5 +1,12 @@
 import java.util.*;
 
+/**
+ * Represents a recursive way of finding the minimum in an ArrayList.
+ * 
+ * @author LZ-FSDev
+ * @since 17.0.1
+ * @version 0.0.1
+ */
 public class RecursiveMin
 {
     public static void main(String[] args)
@@ -20,6 +27,14 @@ public class RecursiveMin
         System.out.println("Minimum: " + minimum);
     }
     
+    /**
+    *  Recursive method that finds the minimum from an ArrayList of
+    *  numbers. 
+    *
+    *  @Param numbers The ArrayList used to find the minimum recursively.
+    *  @return The minimum value found in the ArrayList.
+    *  @since 0.0.1
+    */
     public static int findMinimum(ArrayList<Integer> numbers)
     {
         if (numbers.size() == 1) {
